@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Clima Fácil - consulte o clima da sua cidade ou use sua localização."
+    >
+
+    <meta name="theme-color" content="#1976d2">
+
+    <link rel="manifest" href="manifest.json">
+
+    <title>Clima Fácil</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="app">
+
+            <h1>🌤️ Clima Fácil</h1>
+
+            <p class="descricao">
+                Consulte o clima de qualquer cidade.
+            </p>
+
+            <form id="formulario">
+
+                <label for="cidade">
+                    Nome da cidade
+                </label>
+
+                <input
+                    type="text"
+                    id="cidade"
+                    placeholder="Ex: Recife"
+                    required
+                >
+
+                <button type="submit">
+                    🔎 Consultar clima
+                </button>
+
+            </form>
+
+            <div class="separador">
+                <span>ou</span>
+            </div>
+
+            <button
+                id="localizacao"
+                class="botao-localizacao"
+                type="button"
+            >
+                📍 Usar minha localização
+            </button>
+
+            <section
+                id="resultado"
+                aria-live="polite"
+            >
+                <p>
+                    Digite uma cidade ou utilize sua localização.
+                </p>
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

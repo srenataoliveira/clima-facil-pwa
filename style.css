@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eaf6ff;
+    color: #222;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.app {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+button {
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 14px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+form button {
+    background: #1976d2;
+    color: white;
+}
+
+form button:hover {
+    background: #125ca8;
+}
+
+.separador {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 20px 0;
+
+    color: #888;
+}
+
+.separador::before,
+.separador::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #ddd;
+}
+
+.botao-localizacao {
+    width: 100%;
+
+    background: #e8f2ff;
+
+    color: #1565c0;
+
+    border: 1px solid #90caf9;
+}
+
+.botao-localizacao:hover {
+    background: #d5e9ff;
+}
+
+#resultado {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    background: #f4f9fc;
+}
+
+#resultado h2 {
+    margin-bottom: 8px;
+}
+
+.temperatura {
+    font-size: 45px;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+}
+
+.info {
+    margin-top: 8px;
+
+    color: #555;
+}
+
+.erro {
+    color: #c62828;
+
+    font-weight: bold;
+}
+
+
+/* Celular */
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .app {
+        padding: 22px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .temperatura {
+        font-size: 40px;
+    }
+}
