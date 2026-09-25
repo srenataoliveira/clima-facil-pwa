@@ -84,6 +84,19 @@ button {
     cursor: pointer;
 }
 
+/* Estilo para o botão de instalar PWA */
+.botao-instalar {
+    width: 100%;
+    margin-top: 12px;
+    background: #e1f5fe;
+    color: #0277bd;
+    border: 1px solid #b3e5fc;
+}
+
+.botao-instalar:hover {
+    background: #b3e5fc;
+}
+
 form button {
     background: #1976d2;
     color: white;
