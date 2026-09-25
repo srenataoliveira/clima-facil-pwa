@@ -3,6 +3,45 @@ const cidadeInput = document.getElementById("cidade");
 const resultado = document.getElementById("resultado");
 const botaoLocalizacao = document.getElementById("localizacao");
 
+// --- Lógica do Botão de Instalação PWA ---
+let deferredPrompt;
+const botaoInstalar = document.getElementById("botao-instalar");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+    // Impede que o navegador mostre o banner padrão automaticamente
+    e.preventDefault();
+    // Guarda o evento para disparar quando o usuário clicar no botão
+    deferredPrompt = e;
+    // Mostra o seu botão personalizado
+    botaoInstalar.style.display = "block";
+});
+
+botaoInstalar.addEventListener("click", async () => {
+    if (!deferredPrompt) {
+        return;
+    }
+    // Mostra o prompt nativo de instalação do celular/navegador
+    deferredPrompt.prompt();
+    
+    // Espera a escolha do usuário
+    const { outcome } = await deferredPrompt.userChoice;
+    
+    if (outcome === "accepted") {
+        console.log("Usuário aceitou instalar o PWA");
+    } else {
+        console.log("Usuário recusou instalar o PWA");
+    }
+    
+    // O evento só pode ser usado uma vez, limpamos a variável
+    deferredPrompt = null;
+    botaoInstalar.style.display = "none";
+});
+
+window.addEventListener("appinstalled", () => {
+    console.log("PWA instalado com sucesso!");
+    botaoInstalar.style.display = "none";
+});
+
 
 // Consultar cidade
 formulario.addEventListener("submit", async function (event) {
